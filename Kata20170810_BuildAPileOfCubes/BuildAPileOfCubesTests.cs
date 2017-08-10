@@ -18,7 +18,31 @@ namespace Kata20170810_BuildAPileOfCubes
             ASumFindNbShouldBe(3, 36);
         }
 
-        private static void ASumFindNbShouldBe(int expected, int number)
+        [TestMethod]
+        public void input_4183059834009_should_return_2022()
+        {
+            ASumFindNbShouldBe(2022, 4183059834009);
+        }
+
+        [TestMethod]
+        public void input_24723578342962_should_return_n1()
+        {
+            ASumFindNbShouldBe(-1, 24723578342962);
+        }
+
+        [TestMethod]
+        public void input_135440716410000_should_return_4824()
+        {
+            ASumFindNbShouldBe(4824, 135440716410000);
+        }
+
+        [TestMethod]
+        public void input_40539911473216_should_return_3568()
+        {
+            ASumFindNbShouldBe(3568, 40539911473216);
+        }
+
+        private static void ASumFindNbShouldBe(int expected, long number)
         {
             var aSum = new ASum();
             var actual = aSum.findNb(number);
