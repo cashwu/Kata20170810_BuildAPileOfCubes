@@ -13,9 +13,9 @@ namespace Kata20170810_BuildAPileOfCubes
         }
 
         [TestMethod]
-        public void input_28_should_return_3()
+        public void input_36_should_return_3()
         {
-            ASumFindNbShouldBe(3, 28);
+            ASumFindNbShouldBe(3, 36);
         }
 
         private static void ASumFindNbShouldBe(int expected, int number)
@@ -28,9 +28,25 @@ namespace Kata20170810_BuildAPileOfCubes
 
     public class ASum
     {
-        public long findNb(long m)
+        public double findNb(long m)
         {
-            return (long) Math.Pow(m - 1, 1 / 3.0);
+            var n = 1;
+            var result = 0d;
+            while (true)
+            {
+                result += Math.Pow(n, 3);
+
+                if (result == m)
+                {
+                    return n;
+                }
+
+                if (result > m)
+                {
+                    return -1;
+                }
+                n++;
+            }
         }
     }
 }
