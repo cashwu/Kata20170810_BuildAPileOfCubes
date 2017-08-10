@@ -42,6 +42,12 @@ namespace Kata20170810_BuildAPileOfCubes
             ASumFindNbShouldBe(3568, 40539911473216);
         }
 
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            ASumFindNbShouldBe(55100, 2304422822859502500);
+        }
+
         private static void ASumFindNbShouldBe(int expected, long number)
         {
             var aSum = new ASum();
@@ -54,11 +60,12 @@ namespace Kata20170810_BuildAPileOfCubes
     {
         public double findNb(long m)
         {
+            Console.WriteLine(m);
             var n = 1;
-            var result = 0d;
+            long result = 0;
             while (true)
             {
-                result += Math.Pow(n, 3);
+                result += (long)Math.Pow(n, 3);
 
                 if (result == m)
                 {
@@ -67,6 +74,7 @@ namespace Kata20170810_BuildAPileOfCubes
 
                 if (result > m)
                 {
+                    Console.WriteLine("result .." + result);
                     return -1;
                 }
                 n++;
